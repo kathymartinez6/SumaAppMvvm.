@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SumaAppMvvm.ViewModels"
+             x:Class="SumaAppMvvm.Views.MainPage"
+             BackgroundColor="{StaticResource SecondaryColor}">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout>
+        <!-- Título -->
+        <Label Text="Calculadora de Sumas"
+               FontSize="28"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               TextColor="{StaticResource PrimaryColor}" />
+
+        <!-- Campo 1 -->
+        <Entry Placeholder="Ingrese el primer número"
+               Text="{Binding Value1}" />
+
+        <!-- Campo 2 -->
+        <Entry Placeholder="Ingrese el segundo número"
+               Text="{Binding Value2}" />
+
+        <!-- Botón Sumar -->
+        <Button Text="Sumar"
+                Command="{Binding SumCommand}" />
+
+        <!-- Botón Limpiar -->
+        <Button Text="Limpiar"
+                Command="{Binding ClearCommand}"
+                BackgroundColor="{StaticResource AccentColor}" />
+
+        <!-- Mensaje de error -->
+        <Label Text="{Binding ErrorMessage}"
+               TextColor="{StaticResource ErrorColor}"
+               FontAttributes="Bold"
+               IsVisible="{Binding ErrorMessage, Converter={StaticResource StringToBoolConverter}}" />
+
+        <!-- Resultado -->
+        <Label Text="Resultado:"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Label Text="{Binding Result}"
+               FontSize="22"
+               TextColor="{StaticResource PrimaryColor}"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

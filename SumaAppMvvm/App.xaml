@@ -1,0 +1,44 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SumaAppMvvm">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Colores principales -->
+            <Color x:Key="PrimaryColor">#4CAF50</Color>
+            <Color x:Key="SecondaryColor">#FFFFFF</Color>
+            <Color x:Key="AccentColor">#FF9800</Color>
+            <Color x:Key="ErrorColor">#F44336</Color>
+            <Color x:Key="TextColor">#212121</Color>
+
+            <!-- Estilos globales -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="Margin" Value="0,5" />
+                <Setter Property="PlaceholderColor" Value="#9E9E9E" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Margin" Value="0,10" />
+                <Setter Property="Padding" Value="10,5" />
+            </Style>
+
+            <Style TargetType="VerticalStackLayout">
+                <Setter Property="Spacing" Value="15" />
+                <Setter Property="Padding" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+
